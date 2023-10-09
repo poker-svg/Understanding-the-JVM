@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第5章-调优案例分析与实战 · 深入理解Java虚拟机</title>
+        <title>第7章-虚拟机类加载机制 · 深入理解Java虚拟机</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -85,10 +85,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="第6章-类文件结构.html" />
     
-    
-    <link rel="prev" href="第4章-虚拟机性能监控、故障处理工具.html" />
+    <link rel="prev" href="第6章-类文件结构.html" />
     
 
     </head>
@@ -182,7 +180,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="第5章-调优案例分析与实战.html">
+        <li class="chapter " data-level="1.6" data-path="第5章-调优案例分析与实战.html">
             
                 <a href="第5章-调优案例分析与实战.html">
             
@@ -208,7 +206,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="第7章-虚拟机类加载机制.html">
+        <li class="chapter active" data-level="1.8" data-path="第7章-虚拟机类加载机制.html">
             
                 <a href="第7章-虚拟机类加载机制.html">
             
@@ -251,7 +249,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >第5章-调优案例分析与实战</a>
+        <a href="." >第7章-虚拟机类加载机制</a>
     </h1>
 </div>
 
@@ -266,7 +264,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/poker-svg" target="_blank">YangXin Xu</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2023-10-09 14:32:18 </span> </footer>
+                                <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/poker-svg" target="_blank">YangXin Xu</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2023-10-10 00:29:33 </span> </footer>
                                 
                                 </section>
                             
@@ -293,14 +291,10 @@
 
             
                 
-                <a href="第4章-虚拟机性能监控、故障处理工具.html" class="navigation navigation-prev " aria-label="Previous page: 第4章-虚拟机性能监控、故障处理工具">
+                <a href="第6章-类文件结构.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第6章-类文件结构">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="第6章-类文件结构.html" class="navigation navigation-next " aria-label="Next page: 第6章-类文件结构">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -309,7 +303,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第5章-调优案例分析与实战","level":"1.6","depth":1,"next":{"title":"第6章-类文件结构","level":"1.7","depth":1,"path":"第6章-类文件结构.md","ref":"第6章-类文件结构.md","articles":[]},"previous":{"title":"第4章-虚拟机性能监控、故障处理工具","level":"1.5","depth":1,"path":"第4章-虚拟机性能监控、故障处理工具.md","ref":"第4章-虚拟机性能监控、故障处理工具.md","articles":[]},"dir":"neutral"},"config":{"plugins":["expandable-chapters","copy-code-button","page-footer-ex","anchor-navigation-ex","expandable-chapters-small","prism","-highlight","-lunr","-search","search-pro","-sharing","splitter","hide-element","insert-logo","code","livereload"],"ignores":["_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"livereload":{},"page-footer-ex":{"copyright":"By [YangXin Xu](https://github.com/poker-svg)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 120px; min-height: 120px","url":"./images/icon.png"},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深入理解Java虚拟机","gitbook":"*"},"file":{"path":"第5章-调优案例分析与实战.md","mtime":"2023-10-09T06:32:18.567Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-09T16:30:35.372Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第7章-虚拟机类加载机制","level":"1.8","depth":1,"previous":{"title":"第6章-类文件结构","level":"1.7","depth":1,"path":"第6章-类文件结构.md","ref":"第6章-类文件结构.md","articles":[]},"dir":"neutral"},"config":{"plugins":["expandable-chapters","copy-code-button","page-footer-ex","anchor-navigation-ex","expandable-chapters-small","prism","-highlight","-lunr","-search","search-pro","-sharing","splitter","hide-element","insert-logo","code","livereload"],"ignores":["_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"livereload":{},"page-footer-ex":{"copyright":"By [YangXin Xu](https://github.com/poker-svg)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 120px; min-height: 120px","url":"./images/icon.png"},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深入理解Java虚拟机","gitbook":"*"},"file":{"path":"第7章-虚拟机类加载机制.md","mtime":"2023-10-09T16:29:33.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-09T16:30:35.372Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
