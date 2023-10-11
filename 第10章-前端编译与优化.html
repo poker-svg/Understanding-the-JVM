@@ -1,0 +1,634 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第10章-前端编译与优化 · 深入理解Java虚拟机</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第11章-后端编译与优化.html" />
+    
+    
+    <link rel="prev" href="第9章-类加载及执行子系统的案例与实战.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="第1章-走进Java.html">
+            
+                <a href="第1章-走进Java.html">
+            
+                    
+                    第1章-走进Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="第2章-Java内存区域与内存溢出异常.html">
+            
+                <a href="第2章-Java内存区域与内存溢出异常.html">
+            
+                    
+                    第2章-Java内存区域与内存溢出异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第3章-垃圾收集器与内存分配策略.html">
+            
+                <a href="第3章-垃圾收集器与内存分配策略.html">
+            
+                    
+                    第3章-垃圾收集器与内存分配策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第4章-虚拟机性能监控、故障处理工具.html">
+            
+                <a href="第4章-虚拟机性能监控、故障处理工具.html">
+            
+                    
+                    第4章-虚拟机性能监控、故障处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第5章-调优案例分析与实战.html">
+            
+                <a href="第5章-调优案例分析与实战.html">
+            
+                    
+                    第5章-调优案例分析与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第6章-类文件结构.html">
+            
+                <a href="第6章-类文件结构.html">
+            
+                    
+                    第6章-类文件结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第7章-虚拟机类加载机制.html">
+            
+                <a href="第7章-虚拟机类加载机制.html">
+            
+                    
+                    第7章-虚拟机类加载机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第8章-虚拟机字节码执行引擎.html">
+            
+                <a href="第8章-虚拟机字节码执行引擎.html">
+            
+                    
+                    第8章-虚拟机字节码执行引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第9章-类加载及执行子系统的案例与实战.html">
+            
+                <a href="第9章-类加载及执行子系统的案例与实战.html">
+            
+                    
+                    第9章-类加载及执行子系统的案例与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="第10章-前端编译与优化.html">
+            
+                <a href="第10章-前端编译与优化.html">
+            
+                    
+                    第10章-前端编译与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第11章-后端编译与优化.html">
+            
+                <a href="第11章-后端编译与优化.html">
+            
+                    
+                    第11章-后端编译与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第10章-前端编译与优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x8FF0;"><b>1. </b>&#x6982;&#x8FF0;</a></li><li><span class="title-icon "></span><a href="#javac&#x7F16;&#x8BD1;&#x5668;"><b>2. </b>Javac&#x7F16;&#x8BD1;&#x5668;</a></li><ul><li><span class="title-icon "></span><a href="#javac&#x7684;&#x6E90;&#x7801;&#x4E0E;&#x8C03;&#x8BD5;"><b>2.1. </b>Javac&#x7684;&#x6E90;&#x7801;&#x4E0E;&#x8C03;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#&#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;"><b>2.2. </b>&#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;"><b>2.2.1. </b>&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;"><b>2.2.2. </b>&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;"><b>2.3. </b>&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x8BED;&#x4E49;&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;"><b>2.4. </b>&#x8BED;&#x4E49;&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6807;&#x6CE8;&#x68C0;&#x67E5;"><b>2.4.1. </b>&#x6807;&#x6CE8;&#x68C0;&#x67E5;</a></li><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;"><b>2.4.2. </b>&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;"><b>2.4.3. </b>&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;"><b>2.4.4. </b>&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;</a></li></ul></ul><li><span class="title-icon "></span><a href="#java&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x5473;&#x9053;"><b>3. </b>Java&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x5473;&#x9053;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6CDB;&#x578B;"><b>3.1. </b>&#x6CDB;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#java&#x4E0E;c&#x7684;&#x6CDB;&#x578B;"><b>3.1.1. </b>Java&#x4E0E;C#&#x7684;&#x6CDB;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x578B;&#x64E6;&#x9664;"><b>3.1.2. </b>&#x7C7B;&#x578B;&#x64E6;&#x9664;</a></li><li><span class="title-icon "></span><a href="#&#x503C;&#x7C7B;&#x578B;&#x4E0E;&#x672A;&#x6765;&#x7684;&#x6CDB;&#x578B;"><b>3.1.3. </b>&#x503C;&#x7C7B;&#x578B;&#x4E0E;&#x672A;&#x6765;&#x7684;&#x6CDB;&#x578B;</a></li></ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x4E0E;&#x904D;&#x5386;&#x5FAA;&#x73AF;"><b>3.2. </b>&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x4E0E;&#x904D;&#x5386;&#x5FAA;&#x73AF;</a></li><li><span class="title-icon "></span><a href="#&#x6761;&#x4EF6;&#x7F16;&#x8BD1;"><b>3.3. </b>&#x6761;&#x4EF6;&#x7F16;&#x8BD1;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B9E;&#x6218;&#xFF1A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;"><b>4. </b>&#x5B9E;&#x6218;&#xFF1A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;</a></li></ul></div><a href="#&#x6982;&#x8FF0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6982;&#x8FF0;</h1>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F9D;&#x636E;Java&#x7684;&#x4E0D;&#x540C;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x6765;&#x5C06;&#x7F16;&#x8BD1;&#x5668;&#x4EA7;&#x54C1;&#x5206;&#x4E3A;&#x5982;&#x4E0B;&#x4E09;&#x7C7B;&#xFF1A;</p>
+<ol>
+<li><strong>&#x524D;&#x7AEF;&#x7F16;&#x8BD1;&#x5668;</strong>&#xFF1A;JDK&#x7684;Javac&#x3001;Eclipse JDT&#x4E2D;&#x7684;&#x589E;&#x91CF;&#x5F0F;&#x7F16;&#x8BD1;&#x5668;&#xFF08;ECJ&#xFF09;&#x3002;</li>
+<li><strong>&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x5668;</strong>&#xFF1A;HotSpot&#x865A;&#x62DF;&#x673A;&#x7684;C1&#x3001;C2&#x7F16;&#x8BD1;&#x5668;&#xFF0C;Graal&#x7F16;&#x8BD1;&#x5668;&#x3002;</li>
+<li><strong>&#x63D0;&#x524D;&#x7F16;&#x8BD1;&#x5668;</strong>&#xFF1A;JDK&#x7684;Jaotc&#x3001;GNU Compiler for the Java&#xFF08;GCJ&#xFF09;&#x3001;Excelsior JET&#x3002;</li>
+</ol>
+<blockquote>
+<ul>
+<li>&#x524D;&#x7AEF;&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x4EE3;&#x7801;&#x7684;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4F18;&#x5316;&#x63AA;&#x65BD;&#x53EF;&#x8A00;&#xFF08;&#x5728;JDK 1.3&#x4E4B;&#x540E;&#xFF0C;Javac&#x7684;-O&#x4F18;&#x5316;&#x53C2;&#x6570;&#x5C31;&#x4E0D;&#x518D;&#x6709;&#x610F;&#x4E49;&#xFF09;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;Java&#x865A;&#x62DF;&#x673A;&#x8BBE;&#x8BA1;&#x56E2;&#x961F;&#x9009;&#x62E9;&#x628A;&#x5BF9;&#x6027;&#x80FD;&#x7684;&#x4F18;&#x5316;&#x5168;&#x90E8;&#x96C6;&#x4E2D;&#x5230;&#x8FD0;&#x884C;&#x671F;&#x7684;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8BA9;&#x90A3;&#x4E9B;&#x4E0D;&#x662F;&#x7531;Javac&#x4EA7;&#x751F;&#x7684;Class&#x6587;&#x4EF6;&#x4E5F;&#x540C;&#x6837;&#x80FD;&#x4EAB;&#x53D7;&#x5230;&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5316;&#x63AA;&#x65BD;&#x6240;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x7EA2;&#x5229;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x628A;&#x201C;&#x4F18;&#x5316;&#x201D;&#x7684;&#x5B9A;&#x4E49;&#x653E;&#x5BBD;&#xFF0C;&#x628A;&#x5BF9;&#x5F00;&#x53D1;&#x9636;&#x6BB5;&#x7684;&#x4F18;&#x5316;&#x4E5F;&#x8BA1;&#x7B97;&#x8FDB;&#x6765;&#x7684;&#x8BDD;&#xFF0C;Javac&#x786E;&#x5B9E;&#x662F;&#x505A;&#x4E86;&#x8BB8;&#x591A;&#x9488;&#x5BF9;Java&#x8BED;&#x8A00;&#x7F16;&#x7801;&#x8FC7;&#x7A0B;&#x7684;&#x4F18;&#x5316;&#x63AA;&#x65BD;&#x6765;&#x964D;&#x4F4E;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x7F16;&#x7801;&#x590D;&#x6742;&#x5EA6;&#x3001;&#x63D0;&#x9AD8;&#x7F16;&#x7801;&#x6548;&#x7387;&#x3002;</li>
+<li>&#x76F8;&#x5F53;&#x591A;&#x65B0;&#x751F;&#x7684;Java&#x8BED;&#x6CD5;&#x7279;&#x6027;&#xFF0C;&#x90FD;&#x662F;&#x9760;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x201C;&#x8BED;&#x6CD5;&#x7CD6;&#x201D;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F9D;&#x8D56;&#x5B57;&#x8282;&#x7801;&#x6216;&#x8005;Java&#x865A;&#x62DF;&#x673A;&#x7684;&#x5E95;&#x5C42;&#x6539;&#x8FDB;&#x6765;&#x652F;&#x6301;&#x3002;</li>
+</ul>
+</blockquote>
+<h1 id="javac&#x7F16;&#x8BD1;&#x5668;"><a name="javac&#x7F16;&#x8BD1;&#x5668;" class="anchor-navigation-ex-anchor" href="#javac&#x7F16;&#x8BD1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Javac&#x7F16;&#x8BD1;&#x5668;</h1>
+<h2 id="javac&#x7684;&#x6E90;&#x7801;&#x4E0E;&#x8C03;&#x8BD5;"><a name="javac&#x7684;&#x6E90;&#x7801;&#x4E0E;&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#javac&#x7684;&#x6E90;&#x7801;&#x4E0E;&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. Javac&#x7684;&#x6E90;&#x7801;&#x4E0E;&#x8C03;&#x8BD5;</h2>
+<ul>
+<li>&#x300A;Java&#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#x300B;&#x4E2D;&#x4E25;&#x683C;&#x5B9A;&#x4E49;&#x4E86;Class&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x5404;&#x79CD;&#x7EC6;&#x8282;&#xFF0C;&#x53EF;&#x662F;&#x5BF9;&#x5982;&#x4F55;&#x628A;Java&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x4E3A;Class&#x6587;&#x4EF6;&#x5374;&#x63CF;&#x8FF0;&#x5F97;&#x76F8;&#x5F53;&#x5BBD;&#x677E;&#x3002;</li>
+<li>&#x4F46;&#x8FD9;&#x79CD;&#x5BBD;&#x677E;&#x4E5F;&#x5BFC;&#x81F4;&#x4E86;Class&#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E0E;&#x5177;&#x4F53;&#x7684;JDK&#x6216;&#x7F16;&#x8BD1;&#x5668;&#x5B9E;&#x73B0;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x8B6C;&#x5982;&#x5728;&#x4E00;&#x4E9B;&#x6781;&#x7AEF;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x67D0;&#x4E9B;&#x4EE3;&#x7801;&#x5728;Javac&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#xFF0C;&#x4F46;&#x662F;ECJ&#x7F16;&#x8BD1;&#x5668;&#x5C31;&#x4E0D;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li>&#x4ECE;Javac&#x4EE3;&#x7801;&#x7684;&#x603B;&#x4F53;&#x7ED3;&#x6784;&#x6765;&#x770B;&#xFF0C;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x5927;&#x81F4;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;1&#x4E2A;&#x51C6;&#x5907;&#x8FC7;&#x7A0B;&#x548C;3&#x4E2A;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF1A;<ol>
+<li><strong>&#x51C6;&#x5907;&#x8FC7;&#x7A0B;</strong>&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;&#x3002;</li>
+<li><strong>&#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;&#x8FC7;&#x7A0B;</strong>&#xFF1A;<ul>
+<li><u>&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;</u>&#xFF1A;&#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5B57;&#x7B26;&#x6D41;&#x8F6C;&#x53D8;&#x4E3A;&#x6807;&#x8BB0;&#x96C6;&#x5408;&#xFF0C;&#x6784;&#x9020;&#x51FA;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x3002;</li>
+<li><u>&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;</u>&#xFF1A;&#x4EA7;&#x751F;&#x7B26;&#x53F7;&#x5730;&#x5740;&#x548C;&#x7B26;&#x53F7;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li><strong>&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;&#x7684;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x8FC7;&#x7A0B;</strong></li>
+<li><strong>&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;&#x8FC7;&#x7A0B;</strong>&#xFF0C;&#x5305;&#x62EC;&#xFF1A;<ul>
+<li><u>&#x6807;&#x6CE8;&#x68C0;&#x67E5;</u>&#xFF1A;&#x5BF9;&#x8BED;&#x6CD5;&#x7684;&#x9759;&#x6001;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#x3002;</li>
+<li><u>&#x6570;&#x636E;&#x6D41;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;</u>&#xFF1A;&#x5BF9;&#x7A0B;&#x5E8F;&#x52A8;&#x6001;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#x3002;</li>
+<li><u>&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;</u>&#xFF1A;&#x5C06;&#x7B80;&#x5316;&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x8FD8;&#x539F;&#x4E3A;&#x539F;&#x6709;&#x7684;&#x5F62;&#x5F0F;&#x3002;</li>
+<li><u>&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;</u>&#xFF1A;&#x5C06;&#x524D;&#x9762;&#x5404;&#x4E2A;&#x6B65;&#x9AA4;&#x6240;&#x751F;&#x6210;&#x7684;&#x4FE1;&#x606F;&#x8F6C;&#x5316;&#x6210;&#x5B57;&#x8282;&#x7801;&#x3002;</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><img src="images/image-20231011150532823.png" alt="image-20231011150532823" style="zoom: 67%;"></p>
+<hr>
+<p><img src="images/image-20231011150714483.png" alt="image-20231011150714483" style="zoom:67%;"></p>
+<h2 id="&#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;"><a name="&#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x89E3;&#x6790;&#x4E0E;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;</h2>
+<blockquote>
+<p>&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x7531;&#x4E0A;&#x56FE;&#x7684;parseFiles()&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x5305;&#x62EC;&#x4E86;&#x7ECF;&#x5178;&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#x539F;&#x7406;&#x4E2D;&#x7684;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x548C;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;</p>
+</blockquote>
+<h3 id="&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;"><a name="&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1. &#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;</h3>
+<ul>
+<li><strong>&#x8BCD;&#x6CD5;&#x5206;&#x6790;</strong>&#x662F;&#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5B57;&#x7B26;&#x6D41;&#x8F6C;&#x53D8;&#x4E3A;&#x6807;&#x8BB0;&#xFF08;Token&#xFF0C;&#x7F16;&#x8BD1;&#x65F6;&#x7684;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#xFF09;&#x96C6;&#x5408;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li>&#x5728;Javac&#x7684;&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x8FC7;&#x7A0B;&#x7531;com.sun.tools.javac.parser.Scanner&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x3002;</li>
+<li><strong>&#x8BED;&#x6CD5;&#x5206;&#x6790;</strong>&#x662F;&#x6839;&#x636E;&#x6807;&#x8BB0;&#x5E8F;&#x5217;&#x6784;&#x9020; <u>&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#xFF08;&#x4E00;&#x79CD;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x7684;&#x6811;&#x5F62;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#xFF09;</u> &#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x4EE3;&#x8868;&#x7740;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x4E00;&#x4E2A; <u>&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#xFF08;&#x4F8B;&#x5982;&#x5305;&#x3001;&#x7C7B;&#x578B;&#x3001;&#x4FEE;&#x9970;&#x7B26;&#x3001;&#x8FD0;&#x7B97;&#x7B26;&#x3001;&#x63A5;&#x53E3;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x3001;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;&#x7B49;&#xFF09;&#x3002;</u></li>
+<li>&#x7ECF;&#x8FC7;&#x8BCD;&#x6CD5;&#x548C;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x751F;&#x6210;&#x8BED;&#x6CD5;&#x6811;&#x4EE5;&#x540E;&#xFF0C;&#x540E;&#x7EED;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x5EFA;&#x7ACB;&#x5728;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x4E4B;&#x4E0A;&#x3002;</li>
+</ul>
+<h3 id="&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;"><a name="&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.2. &#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;</h3>
+<ul>
+<li>&#x4E0B;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#x662F;&#x5BF9;&#x7B26;&#x53F7;&#x8868;&#x8FDB;&#x884C;&#x586B;&#x5145;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x56FE;10-5&#x4E2D;enterTrees()&#x65B9;&#x6CD5;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x3002;</li>
+<li><strong>&#x7B26;&#x53F7;&#x8868;</strong>&#xFF1A;<u>&#x7531;&#x4E00;&#x7EC4;&#x7B26;&#x53F7;&#x5730;&#x5740;&#x548C;&#x7B26;&#x53F7;&#x4FE1;&#x606F;&#x6784;&#x6210;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</u></li>
+<li>&#x5728;Javac&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x586B;&#x5145;&#x7B26;&#x53F7;&#x8868;&#x7684;&#x8FC7;&#x7A0B;&#x7531;com.sun.tools.javac.comp.Enter&#x7C7B;&#x5B9E;&#x73B0;&#x3002;&#x8BE5;&#x8FC7;&#x7A0B;&#x7684;&#x4EA7;&#x51FA;&#x7269;&#x662F;&#x4E00;&#x4E2A;&#x5F85;&#x5904;&#x7406;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x6BCF;&#x4E2A;&#x7F16;&#x8BD1;&#x5355;&#x5143;&#x7684;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x7684;&#x9876;&#x7EA7;&#x8282;&#x70B9;&#x3002;</li>
+</ul>
+<h2 id="&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;"><a name="&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. &#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;</h2>
+<ul>
+<li>JDK 6&#x8BBE;&#x8BA1;&#x4E86;&#x4E00;&#x7EC4;&#x88AB;&#x79F0;&#x4E3A; <u>&#x201C;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;&#x201D;</u> &#x7684;&#x6807;&#x51C6;API&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x524D;&#x81F3;&#x7F16;&#x8BD1;&#x671F;&#x5BF9;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x7279;&#x5B9A;&#x6CE8;&#x89E3;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x4ECE;&#x800C;&#x5F71;&#x54CD;&#x5230;&#x524D;&#x7AEF;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li>&#x4EE5;&#x628A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;&#x770B;&#x4F5C;&#x662F;&#x4E00;&#x7EC4;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x5F53;&#x8FD9;&#x4E9B;&#x63D2;&#x4EF6;&#x5DE5;&#x4F5C;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x8BFB;&#x53D6;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x6DFB;&#x52A0;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x5143;&#x7D20;&#x3002;</li>
+<li>&#x5728;Javac&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;&#x7684;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#x662F;&#x5728;initPorcessAnnotations()&#x65B9;&#x6CD5;&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x800C;&#x5B83;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x5219;&#x662F;&#x5728;processAnnotations()&#x65B9;&#x6CD5;&#x4E2D;&#x5B8C;&#x6210;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8FD8;&#x6709;&#x65B0;&#x7684;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;&#x9700;&#x8981;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x901A;&#x8FC7;com.sun.tools.javac.processing.JavacProcessing-Environment&#x7C7B;&#x7684;doProcessing()&#x65B9;&#x6CD5;&#x6765;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;JavaCompiler&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x7F16;&#x8BD1;&#x7684;&#x540E;&#x7EED;&#x6B65;&#x9AA4;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</li>
+</ul>
+<h2 id="&#x8BED;&#x4E49;&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;"><a name="&#x8BED;&#x4E49;&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x4E49;&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. &#x8BED;&#x4E49;&#x5206;&#x6790;&#x4E0E;&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;</h2>
+<ul>
+<li>&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x80FD;&#x591F;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x6B63;&#x786E;&#x7684;&#x6E90;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x6E90;&#x7A0B;&#x5E8F;&#x7684;&#x8BED;&#x4E49;&#x662F;&#x7B26;&#x5408;&#x903B;&#x8F91;&#x7684;&#x3002;</li>
+<li><strong>&#x8BED;&#x4E49;&#x5206;&#x6790;&#x7684;&#x4E3B;&#x8981;&#x4EFB;&#x52A1;</strong>&#xFF1A;&#x5BF9;&#x7ED3;&#x6784;&#x4E0A;&#x6B63;&#x786E;&#x7684;&#x6E90;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x76F8;&#x5173;&#x6027;&#x8D28;&#x7684;&#x68C0;&#x67E5;&#xFF0C;&#x8B6C;&#x5982;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x3001;&#x63A7;&#x5236;&#x6D41;&#x68C0;&#x67E5;&#x3001;&#x6570;&#x636E;&#x6D41;&#x68C0;&#x67E5;&#x7B49;&#x3002;</li>
+<li>Javac&#x5728;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8BED;&#x4E49;&#x5206;&#x6790;&#x8FC7;&#x7A0B;&#x53EF;&#x5206;&#x4E3A; <strong>&#x6807;&#x6CE8;&#x68C0;&#x67E5;</strong> &#x548C; <strong>&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;</strong> &#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x5206;&#x522B;&#x7531;&#x56FE;10-5&#x7684;attribute()&#x548C;flow()&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x3002;</li>
+</ul>
+<h3 id="&#x6807;&#x6CE8;&#x68C0;&#x67E5;"><a name="&#x6807;&#x6CE8;&#x68C0;&#x67E5;" class="anchor-navigation-ex-anchor" href="#&#x6807;&#x6CE8;&#x68C0;&#x67E5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.1. &#x6807;&#x6CE8;&#x68C0;&#x67E5;</h3>
+<ul>
+<li>&#x6807;&#x6CE8;&#x68C0;&#x67E5;&#x6B65;&#x9AA4;&#x8981;&#x68C0;&#x67E5;&#x7684;&#x5185;&#x5BB9;&#x5305;&#x62EC;&#x8BF8;&#x5982;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#x524D;&#x662F;&#x5426;&#x5DF2;&#x88AB;&#x58F0;&#x660E;&#x3001;&#x53D8;&#x91CF;&#x4E0E;&#x8D4B;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x80FD;&#x591F;&#x5339;&#x914D;&#x7B49;&#x3002;</li>
+<li>&#x6807;&#x6CE8;&#x68C0;&#x67E5;&#x4E2D;&#xFF0C;&#x8FD8;&#x4F1A;&#x987A;&#x4FBF;&#x8FDB;&#x884C;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A;&#x5E38;&#x91CF;&#x6298;&#x53E0;&#x7684;&#x4EE3;&#x7801;&#x4F18;&#x5316;&#xFF0C;&#x8FD9;&#x662F;Javac&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5BF9;&#x6E90;&#x4EE3;&#x7801;&#x505A;&#x7684;&#x6781;&#x5C11;&#x91CF;&#x4F18;&#x5316;&#x63AA;&#x65BD;&#x4E4B;&#x4E00;&#xFF08;&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x51E0;&#x4E4E;&#x90FD;&#x5728;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#xFF09;&#x3002;</li>
+<li>&#x6807;&#x6CE8;&#x68C0;&#x67E5;&#x6B65;&#x9AA4;&#x5728;Javac&#x6E90;&#x7801;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x662F;com.sun.tools.javac.comp.Attr&#x7C7B;&#x548C;com.sun.tools.javac.comp.Check&#x7C7B;&#x3002;</li>
+</ul>
+<h3 id="&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;"><a name="&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.2. &#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;</h3>
+<ul>
+<li>&#x6570;&#x636E;&#x6D41;&#x5206;&#x6790;&#x548C;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;&#x662F;&#x5BF9;&#x7A0B;&#x5E8F;&#x4E0A;&#x4E0B;&#x6587;&#x903B;&#x8F91;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x9A8C;&#x8BC1;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x51FA;&#x8BF8;&#x5982;&#x7A0B;&#x5E8F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5728;&#x4F7F;&#x7528;&#x524D;&#x662F;&#x5426;&#x6709;&#x8D4B;&#x503C;&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x6BCF;&#x6761;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x90FD;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3001;&#x662F;&#x5426;&#x6240;&#x6709;&#x7684;&#x53D7;&#x67E5;&#x5F02;&#x5E38;&#x90FD;&#x88AB;&#x6B63;&#x786E;&#x5904;&#x7406;&#x4E86;&#x7B49;&#x95EE;&#x9898;&#x3002;</li>
+<li>&#x5728;Javac&#x7684;&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x53CA;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;&#x7684;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x7531;com.sun.tools.javac.comp.Flow&#x7C7B;&#x6765;&#x5B8C;&#x6210;&#x3002;</li>
+</ul>
+<h3 id="&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;"><a name="&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;" class="anchor-navigation-ex-anchor" href="#&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.3. &#x89E3;&#x8BED;&#x6CD5;&#x7CD6;</h3>
+<ul>
+<li>&#x8BED;&#x6CD5;&#x7CD6;&#xFF08;Syntactic Sugar&#xFF09;&#xFF1A;&#x4E5F;&#x79F0;&#x7CD6;&#x8863;&#x8BED;&#x6CD5;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x8BED;&#x8A00;&#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x67D0;&#x79CD;&#x8BED;&#x6CD5;&#xFF0C;&#x8FD9;&#x79CD;&#x8BED;&#x6CD5;&#x5BF9;&#x8BED;&#x8A00;&#x7684;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x548C;&#x529F;&#x80FD;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x9645;&#x5F71;&#x54CD;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x80FD;&#x66F4;&#x65B9;&#x4FBF;&#x7A0B;&#x5E8F;&#x5458;&#x4F7F;&#x7528;&#x8BE5;&#x8BED;&#x8A00;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x5E38;&#x6765;&#x8BF4;&#x4F7F;&#x7528;&#x8BED;&#x6CD5;&#x7CD6;&#x80FD;&#x591F;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x91CF;&#x3001;&#x589E;&#x52A0;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x51FA;&#x9519;&#x7684;&#x673A;&#x4F1A;&#x3002;</p>
+</blockquote>
+<ul>
+<li>Java&#x4E2D;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5305;&#x62EC;&#x4E86;&#x524D;&#x9762;&#x63D0;&#x5230;&#x8FC7;&#x7684;&#x6CDB;&#x578B;&#x3001;&#x53D8;&#x957F;&#x53C2;&#x6570;&#x3001;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x62C6;&#x7BB1;&#x7B49;&#x3002;</li>
+<li>Java&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x65F6;&#x5E76;&#x4E0D;&#x76F4;&#x63A5;&#x652F;&#x6301;&#x8FD9;&#x4E9B;&#x8BED;&#x6CD5;&#xFF0C;&#x5B83;&#x4EEC;&#x5728;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x88AB;&#x8FD8;&#x539F;&#x56DE;&#x539F;&#x59CB;&#x7684;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x79F0;&#x4E3A;<strong><u>&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;</u></strong>&#x3002;</li>
+<li>&#x5728;Javac&#x7684;&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x89E3;&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x8FC7;&#x7A0B;&#x7531;desugar()&#x65B9;&#x6CD5;&#x89E6;&#x53D1;&#xFF0C;&#x5728;com.sun.tools.javac.comp.TransTypes&#x7C7B;&#x548C;com.sun.tools.javac.comp.Lower&#x7C7B;&#x4E2D;&#x5B8C;&#x6210;&#x3002;</li>
+</ul>
+<h3 id="&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;"><a name="&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.4. &#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;</h3>
+<ul>
+<li><p>&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;&#x662F;Javac&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x5728;Javac&#x6E90;&#x7801;&#x91CC;&#x9762;&#x7531;com.sun.tools.javac.jvm.Gen&#x7C7B;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+</li>
+<li><p>&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;&#x9636;&#x6BB5;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x628A;&#x524D;&#x9762;&#x5404;&#x4E2A;&#x6B65;&#x9AA4;&#x6240;&#x751F;&#x6210;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x8BED;&#x6CD5;&#x6811;&#x3001;&#x7B26;&#x53F7;&#x8868;&#xFF09;&#x8F6C;&#x5316;&#x6210;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#x5199;&#x5230;&#x78C1;&#x76D8;&#x4E2D;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x8FD8;&#x8FDB;&#x884C;&#x4E86;&#x5C11;&#x91CF;&#x7684;&#x4EE3;&#x7801;&#x6DFB;&#x52A0;&#x548C;&#x8F6C;&#x6362;&#x5DE5;&#x4F5C;&#x3002;</p>
+</li>
+<li><blockquote>
+<ul>
+<li>&#x4F8B;&#x5982;&#x524D;&#x6587;&#x591A;&#x6B21;&#x767B;&#x573A;&#x7684;&#x5B9E;&#x4F8B;&#x6784;&#x9020;&#x5668;\<init\>()&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x6784;&#x9020;&#x5668;\<clinit\>()&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x8BED;&#x6CD5;&#x6811;&#x4E4B;&#x4E2D;&#x7684;&#x3002;</clinit\></init\></li>
+<li>\<init\>()&#x548C;\<clinit\>()&#x8FD9;&#x4E24;&#x4E2A;&#x6784;&#x9020;&#x5668;&#x7684;&#x4EA7;&#x751F;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x79CD;<strong><u>&#x4EE3;&#x7801;&#x6536;&#x655B;</u></strong>&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x628A;&#x8BED;&#x53E5;&#x5757;&#x3001;&#x53D8;&#x91CF;&#x521D;&#x59CB;&#x5316;&#x3001;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x6784;&#x9020;&#x5668;&#x7B49;&#x64CD;&#x4F5C;&#x6536;&#x655B;&#x5230;\<init\>()&#x548C;\<clinit\>()&#x65B9;&#x6CD5;&#x4E4B;&#x4E2D;&#x3002;</clinit\></init\></clinit\></init\></li>
+</ul>
+</blockquote>
+</li>
+<li><p>&#x5B8C;&#x6210;&#x4E86;&#x5BF9;&#x8BED;&#x6CD5;&#x6811;&#x7684;&#x904D;&#x5386;&#x548C;&#x8C03;&#x6574;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x628A;&#x586B;&#x5145;&#x4E86;&#x6240;&#x6709;&#x6240;&#x9700;&#x4FE1;&#x606F;&#x7684;&#x7B26;&#x53F7;&#x8868;&#x4EA4;&#x5230;com.sun.tools.javac.jvm.ClassWriter&#x7C7B;&#x624B;&#x4E0A;&#xFF0C;&#x7531;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;writeClass()&#x65B9;&#x6CD5;&#x8F93;&#x51FA;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x751F;&#x6210;&#x6700;&#x7EC8;&#x7684;Class&#x6587;&#x4EF6;&#xFF0C;&#x5230;&#x6B64;&#xFF0C;&#x6574;&#x4E2A;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x5BA3;&#x544A;&#x7ED3;&#x675F;&#x3002;</p>
+</li>
+</ul>
+<h1 id="java&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x5473;&#x9053;"><a name="java&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x5473;&#x9053;" class="anchor-navigation-ex-anchor" href="#java&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x5473;&#x9053;"><i class="fa fa-link" aria-hidden="true"></i></a>3. Java&#x8BED;&#x6CD5;&#x7CD6;&#x7684;&#x5473;&#x9053;</h1>
+<h2 id="&#x6CDB;&#x578B;"><a name="&#x6CDB;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x6CDB;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. &#x6CDB;&#x578B;</h2>
+<p><strong><u>&#x6CDB;&#x578B;&#x7684;&#x672C;&#x8D28;&#x662F; <code>&#x53C2;&#x6570;&#x5316;&#x7C7B;&#x578B;</code> &#x6216;&#x8005; <code>&#x53C2;&#x6570;&#x5316;&#x591A;&#x6001;</code> &#x7684;&#x5E94;&#x7528;</u></strong>&#xFF1A;&#x5373;&#x53EF;&#x4EE5;&#x5C06;&#x64CD;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x4E3A;&#x65B9;&#x6CD5;&#x7B7E;&#x540D;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x79CD;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x80FD;&#x591F;&#x7528;&#x5728;&#x7C7B;&#x3001;&#x63A5;&#x53E3;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x521B;&#x5EFA;&#x4E2D;&#xFF0C;&#x5206;&#x522B;&#x6784;&#x6210;&#x6CDB;&#x578B;&#x7C7B;&#x3001;&#x6CDB;&#x578B;&#x63A5;&#x53E3;&#x548C;&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="java&#x4E0E;c&#x7684;&#x6CDB;&#x578B;"><a name="java&#x4E0E;c&#x7684;&#x6CDB;&#x578B;" class="anchor-navigation-ex-anchor" href="#java&#x4E0E;c&#x7684;&#x6CDB;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.1. Java&#x4E0E;C#&#x7684;&#x6CDB;&#x578B;</h3>
+<ul>
+<li>Java&#x9009;&#x62E9;&#x7684;&#x6CDB;&#x578B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x53EB;&#x4F5C; <strong><u>&#x201C;&#x7C7B;&#x578B;&#x64E6;&#x9664;&#x5F0F;&#x6CDB;&#x578B;&#x201D;&#xFF08;Type Erasure Generics&#xFF09;</u></strong>&#xFF0C;&#x800C;C#&#x9009;&#x62E9;&#x7684;&#x6CDB;&#x578B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F; <strong><u>&#x201C;&#x5177;&#x73B0;&#x5316;&#x5F0F;&#x6CDB;&#x578B;&#x201D;&#xFF08;Reified Generics&#xFF09;</u></strong>&#x3002;</li>
+<li>C#&#x4E2D;&#x7684;&#x6CDB;&#x578B;&#x65E0;&#x8BBA;&#x5728;&#x7A0B;&#x5E8F;&#x6E90;&#x7801;&#x3001;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x4E2D;&#x95F4;&#x8BED;&#x8A00;&#x8868;&#x793A;&#x3001;&#x8FD0;&#x884C;&#x671F;&#x7684;CLR&#x91CC;&#x9762;&#x90FD;&#x662F;&#x5207;&#x5B9E;&#x5B58;&#x5728;&#x7684;&#x3002;List\<int\>&#x4E0E;List\<string\>&#x5C31;&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x4EEC;&#x7531;&#x7CFB;&#x7EDF;&#x5728;&#x8FD0;&#x884C;&#x671F;&#x751F;&#x6210;&#xFF0C;&#x6709;&#x7740;&#x81EA;&#x5DF1;&#x72EC;&#x7ACB;&#x7684;&#x865A;&#x65B9;&#x6CD5;&#x8868;&#x548C;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x3002;</string\></int\></li>
+<li>Java&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6CDB;&#x578B;&#x53EA;&#x5728;&#x7A0B;&#x5E8F;&#x6E90;&#x7801;&#x4E2D;&#x5B58;&#x5728;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5168;&#x90E8;&#x6CDB;&#x578B;&#x90FD;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x539F;&#x6765;&#x7684;&#x88F8;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x5730;&#x65B9;&#x63D2;&#x5165;&#x4E86;&#x5F3A;&#x5236;&#x8F6C;&#x578B;&#x4EE3;&#x7801;&#x3002;&#x56E0;&#x6B64;&#x5728;&#x8FD0;&#x884C;&#x671F;&#xFF0C;ArrayList\<int\>&#x4E0E;ArrayList\<string\>&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x3002;</string\></int\></li>
+</ul>
+<h3 id="&#x7C7B;&#x578B;&#x64E6;&#x9664;"><a name="&#x7C7B;&#x578B;&#x64E6;&#x9664;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x578B;&#x64E6;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.2. &#x7C7B;&#x578B;&#x64E6;&#x9664;</h3>
+<ul>
+<li><p>&#x7531;&#x4E8E;Java&#x9009;&#x62E9;&#x76F4;&#x63A5;&#x628A;&#x5DF2;&#x6709;&#x7684;&#x7C7B;&#x578B;&#x6CDB;&#x578B;&#x5316;&#x3002;&#x7531;&#x6B64;&#x5C31;&#x5F15;&#x51FA;&#x4E86; <strong>&#x88F8;&#x7C7B;&#x578B;</strong> &#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x88F8;&#x7C7B;&#x578B;&#x5E94;&#x88AB;&#x89C6;&#x4E3A;&#x6240;&#x6709;&#x8BE5;&#x7C7B;&#x578B;&#x6CDB;&#x578B;&#x5316;&#x5B9E;&#x4F8B;&#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x5982;&#x4E0B;Java&#x4EE3;&#x7801;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x7CFB;&#x7EDF;&#x5141;&#x8BB8;&#x7684;&#x4ECE;&#x5B50;&#x7C7B;&#x5230;&#x7236;&#x7C7B;&#x7684;&#x5B89;&#x5168;&#x8F6C;&#x578B;&#xFF1A;</p>
+</li>
+<li><pre class="language-"><code class="lang-java">  <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> ilist <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> slist <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">ArrayList</span> list<span class="token punctuation">;</span> <span class="token comment">// &#x88F8;&#x7C7B;&#x578B;</span>
+  list <span class="token operator">=</span> ilist<span class="token punctuation">;</span>
+  list <span class="token operator">=</span> slist<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x5B9E;&#x73B0; &#x201C;&#x88F8;&#x7C7B;&#x578B;&#x201D; &#x6709;&#x5982;&#x4E0B;&#x4E24;&#x79CD;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<ol>
+<li>&#x8FD0;&#x884C;&#x671F;&#x7531;Java&#x865A;&#x62DF;&#x673A;&#x6765;&#x81EA;&#x52A8;&#x5730;&#x3001;&#x771F;&#x5B9E;&#x5730;&#x6784;&#x9020;&#x51FA;ArrayList\<integer\>&#x8FD9;&#x6837;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x81EA;&#x52A8;&#x5B9E;&#x73B0;&#x4ECE;ArrayList\<integer\>&#x6D3E;&#x751F;&#x81EA;ArrayList&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x3002;</integer\></integer\></li>
+<li>&#x5355;&#x7C97;&#x66B4;&#x5730;&#x76F4;&#x63A5;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x628A;ArrayList\<integer\>&#x8FD8;&#x539F;&#x56DE;ArrayList&#xFF0C;&#x53EA;&#x5728;&#x5143;&#x7D20;&#x8BBF;&#x95EE;&#x3001;&#x4FEE;&#x6539;&#x65F6;&#x81EA;&#x52A8;&#x63D2;&#x5165;&#x4E00;&#x4E9B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x548C;&#x68C0;&#x67E5;&#x6307;&#x4EE4;&#x3002;</integer\></li>
+<li>&#x663E;&#x7136;Java&#x9009;&#x62E9;&#x4E86;&#x540E;&#x8005;&#x3002;</li>
+</ol>
+</li>
+<li><p>&#x6CDB;&#x578B;&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x4F7F;&#x7528;&#x64E6;&#x9664;&#x6CD5;&#x5B9E;&#x73B0;&#x6CDB;&#x578B;&#x76F4;&#x63A5;&#x5BFC;&#x81F4;&#x4E86;&#x5BF9;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x6570;&#x636E;(int,long,char&#x2026;)&#x7684;&#x652F;&#x6301;&#x53C8;&#x6210;&#x4E86;&#x65B0;&#x7684;&#x9EBB;&#x70E6;&#x3002;Java&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;/&#x62C6;&#x7BB1;&#x8FDB;&#x884C;&#x8865;&#x4E01;&#xFF0C;&#x4F46;&#x8FD9;&#x53C8;&#x5BFC;&#x81F4;&#x6CDB;&#x578B;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x6162;&#x3002;</li>
+<li>&#x8FD0;&#x884C;&#x671F;&#x65E0;&#x6CD5;&#x53D6;&#x5F97;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#xFF0C;&#x800C;&#x8FD9;&#x4F1A;&#x8BA9;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x53D8;&#x5F97;&#x76F8;&#x5F53;&#x5570;&#x55E6;&#x3002;</li>
+<li>&#x901A;&#x8FC7;&#x64E6;&#x9664;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x6CDB;&#x578B;&#xFF0C;&#x8FD8;&#x4E27;&#x5931;&#x4E86;&#x4E00;&#x4E9B;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x601D;&#x60F3;&#x5E94;&#x6709;&#x7684;&#x4F18;&#x96C5;&#xFF0C;&#x5E26;&#x6765;&#x4E86;&#x4E00;&#x4E9B;&#x6A21;&#x68F1;&#x4E24;&#x53EF;&#x7684;&#x6A21;&#x7CCA;&#x72B6;&#x51B5;&#x3002;</li>
+</ol>
+</li>
+</ul>
+<h3 id="&#x503C;&#x7C7B;&#x578B;&#x4E0E;&#x672A;&#x6765;&#x7684;&#x6CDB;&#x578B;"><a name="&#x503C;&#x7C7B;&#x578B;&#x4E0E;&#x672A;&#x6765;&#x7684;&#x6CDB;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x503C;&#x7C7B;&#x578B;&#x4E0E;&#x672A;&#x6765;&#x7684;&#x6CDB;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.3. &#x503C;&#x7C7B;&#x578B;&#x4E0E;&#x672A;&#x6765;&#x7684;&#x6CDB;&#x578B;</h3>
+<blockquote>
+<p>C#&#x5E76;&#x6CA1;&#x6709;Java&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x539F;&#x751F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5728;C#&#x4E2D;&#x4F7F;&#x7528;&#x7684;int&#x3001;bool&#x3001;double&#x5173;&#x952E;&#x5B57;&#x5176;&#x5B9E;&#x662F;&#x5BF9;&#x5E94;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x5728;.NET&#x6846;&#x67B6;&#x4E2D;&#x9884;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5982;Int32&#x3001;Boolean&#x3001;Double&#x7B49;&#x3002;&#x5728;C#&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x53EA;&#x8981;&#x7EE7;&#x627F;&#x4E8E;ValueType&#x7C7B;&#x578B;&#x5373;&#x53EF;&#xFF0C;&#x800C;ValueType&#x4E5F;&#x662F;&#x7EDF;&#x4E00;&#x57FA;&#x7C7B;Object&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x4F1A;&#x9047;&#x5230;Java&#x90A3;&#x6837;int&#x4E0D;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x5C31;&#x65E0;&#x6CD5;&#x8F6C;&#x578B;&#x4E3A;Object&#x7684;&#x5C34;&#x5C2C;&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x503C;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4E0E;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x4E00;&#x6837;&#xFF0C;&#x5177;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x65B9;&#x6CD5;&#x6216;&#x662F;&#x5C5E;&#x6027;&#x5B57;&#x6BB5;&#x7B49;&#x7B49;&#x3002;&#x5B83;&#x4E0E;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x5B83;&#x5728;&#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;&#x901A;&#x5E38;&#x662F;&#x6574;&#x4F53;&#x590D;&#x5236;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x50CF;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x90A3;&#x6837;&#x4F20;&#x9012;&#x5F15;&#x7528;&#x7684;&#x3002;</li>
+<li>&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#x5F88;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x5206;&#x914D;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x6808;&#x4E0A;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x503C;&#x7C7B;&#x578B;&#x4F1A;&#x968F;&#x7740;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x9000;&#x51FA;&#x800C;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#xFF0C;&#x4E0D;&#x4F1A;&#x7ED9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5B50;&#x7CFB;&#x7EDF;&#x5E26;&#x6765;&#x4EFB;&#x4F55;&#x538B;&#x529B;&#x3002;</li>
+</ul>
+<h2 id="&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x4E0E;&#x904D;&#x5386;&#x5FAA;&#x73AF;"><a name="&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x4E0E;&#x904D;&#x5386;&#x5FAA;&#x73AF;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x4E0E;&#x904D;&#x5386;&#x5FAA;&#x73AF;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. &#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x4E0E;&#x904D;&#x5386;&#x5FAA;&#x73AF;</h2>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>   
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>&#x5C55;&#x5F00;&#x540E;&#x7684;&#x7B49;&#x4EF7;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+    <span class="token class-name">List</span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>        
+        <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>        
+        <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>        
+        <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>        
+        <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Iterator</span> localIterator <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> localIterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span>localIterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sum <span class="token operator">+=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x4E00;&#x5171;&#x5305;&#x542B;&#x4E86;&#x6CDB;&#x578B;&#x3001;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x81EA;&#x52A8;&#x62C6;&#x7BB1;&#x3001;&#x904D;&#x5386;&#x5FAA;&#x73AF;&#x4E0E;&#x53D8;&#x957F;&#x53C2;&#x6570;5&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
+<ul>
+<li>&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x3001;&#x62C6;&#x7BB1;&#x5728;&#x7F16;&#x8BD1;&#x4E4B;&#x540E;&#x88AB;&#x8F6C;&#x5316;&#x6210;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#x88C5;&#x548C;&#x8FD8;&#x539F;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x904D;&#x5386;&#x5FAA;&#x73AF;&#x5219;&#x662F;&#x628A;&#x4EE3;&#x7801;&#x8FD8;&#x539F;&#x6210;&#x4E86;&#x8FED;&#x4EE3;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x904D;&#x5386;&#x5FAA;&#x73AF;&#x9700;&#x8981;&#x88AB;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x5B9E;&#x73B0;Iterable&#x63A5;&#x53E3;&#x7684;&#x539F;&#x56E0;&#x3002;</li>
+<li>&#x53D8;&#x957F;&#x53C2;&#x6570;&#x5728;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;</li>
+</ul>
+</blockquote>
+<h2 id="&#x6761;&#x4EF6;&#x7F16;&#x8BD1;"><a name="&#x6761;&#x4EF6;&#x7F16;&#x8BD1;" class="anchor-navigation-ex-anchor" href="#&#x6761;&#x4EF6;&#x7F16;&#x8BD1;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3. &#x6761;&#x4EF6;&#x7F16;&#x8BD1;</h2>
+<p>Java&#x8BED;&#x4E49;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#xFF0C;&#x5C31;&#x662F; <u>&#x4F7F;&#x7528;&#x6761;&#x4EF6;&#x4E3A;&#x5E38;&#x91CF;&#x7684;if&#x8BED;&#x53E5;</u>&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x7684;if&#x8BED;&#x53E5;&#x4E0D;&#x540C;&#x4E8E;&#x5176;&#x5B83;Java&#x4EE3;&#x7801;&#xFF0C;&#x5B83;&#x5728;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x5C31;&#x4F1A;&#x88AB;&#x524D;&#x7AEF;&#x7F16;&#x8BD1;&#x5668;&#x63A2;&#x67E5;&#x5230;&#xFF0C;&#x751F;&#x6210;&#x7684;&#x5B57;&#x8282;&#x7801;&#x4E2D;&#x53EA;&#x5305;&#x62EC;block 1&#x7684;&#x4EE3;&#x7801;&#xFF1B;&#x800C;&#x4E0D;&#x5305;&#x542B;block 2&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;block 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;block 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x6761;&#x4EF6;&#x4E3A;&#x5E38;&#x91CF;&#x7684;if&#x8BED;&#x53E5;&#x624D;&#x80FD;&#x8FBE;&#x5230;&#x4E0A;&#x8FF0;&#x6548;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x4E0E;&#x5176;&#x4ED6;&#x5E26;&#x6709;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x80FD;&#x529B;&#x7684;&#x8BED;&#x53E5;&#x642D;&#x914D;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x5728;&#x63A7;&#x5236;&#x6D41;&#x5206;&#x6790;&#x4E2D;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#xFF0C;&#x88AB;&#x62D2;&#x7EDD;&#x7F16;&#x8BD1;&#x3002;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x4F1A;&#x88AB;&#x62D2;&#x7EDD;&#x7F16;&#x8BD1;&#xFF1A;</p>
+</blockquote>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x4F1A;&#x63D0;&#x793A;&#x201C;Unreachable code&#x201D;    </span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Java&#x8BED;&#x8A00;&#x4E2D;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#xFF0C;&#x6839;&#x636E;&#x5E03;&#x5C14;&#x5E38;&#x91CF;&#x503C;&#x7684;&#x771F;&#x5047;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x4F1A;&#x628A;&#x5206;&#x652F;&#x4E2D;&#x4E0D;&#x6210;&#x7ACB;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x6D88;&#x9664;&#x6389;&#xFF0C;&#x8FD9;&#x4E00;&#x5DE5;&#x4F5C;&#x5C06;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x89E3;&#x9664;&#x8BED;&#x6CD5;&#x7CD6;&#x9636;&#x6BB5;&#x5B8C;&#x6210;&#x3002;</li>
+<li>&#x7531;&#x4E8E;if&#x8BED;&#x53E5;&#x53EA;&#x80FD;&#x5199;&#x5728;&#x65B9;&#x6CD5;&#x4F53;&#x5185;&#x90E8;&#xFF0C;&#x56E0;&#x6B64;Java&#x8BED;&#x8A00;&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x53EA;&#x80FD;&#x5B9E;&#x73B0;Block&#x7EA7;&#x522B;&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x5B9E;&#x73B0;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x8C03;&#x6574;&#x6574;&#x4E2A;Java&#x7C7B;&#x7684;&#x7ED3;&#x6784;&#x3002;</li>
+</ul>
+<h1 id="&#x5B9E;&#x6218;&#xFF1A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;"><a name="&#x5B9E;&#x6218;&#xFF1A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x6218;&#xFF1A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5B9E;&#x6218;&#xFF1A;&#x63D2;&#x5165;&#x5F0F;&#x6CE8;&#x89E3;&#x5904;&#x7406;&#x5668;</h1>
+<p>&#xFF08;&#x7565;&#xFF09;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/poker-svg" target="_blank">YangXin Xu</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated</i> 2023-10-11 19:17:08 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第9章-类加载及执行子系统的案例与实战.html" class="navigation navigation-prev " aria-label="Previous page: 第9章-类加载及执行子系统的案例与实战">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第11章-后端编译与优化.html" class="navigation navigation-next " aria-label="Next page: 第11章-后端编译与优化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第10章-前端编译与优化","level":"1.11","depth":1,"next":{"title":"第11章-后端编译与优化","level":"1.12","depth":1,"path":"第11章-后端编译与优化.md","ref":"第11章-后端编译与优化.md","articles":[]},"previous":{"title":"第9章-类加载及执行子系统的案例与实战","level":"1.10","depth":1,"path":"第9章-类加载及执行子系统的案例与实战.md","ref":"第9章-类加载及执行子系统的案例与实战.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","copy-code-button","page-footer-ex","anchor-navigation-ex","expandable-chapters-small","prism","-highlight","-lunr","-search","search-pro","-sharing","splitter","hide-element","insert-logo","code","livereload"],"ignores":["_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"livereload":{},"page-footer-ex":{"copyright":"By [YangXin Xu](https://github.com/poker-svg)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>updated</i>"},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 120px; min-height: 120px","url":"./images/icon.png"},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深入理解Java虚拟机","gitbook":"*"},"file":{"path":"第10章-前端编译与优化.md","mtime":"2023-10-11T11:17:08.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-11T12:00:22.731Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
